@@ -87,7 +87,7 @@ OBJSD				=		$(addprefix $(OBJSDIRD), $(notdir $(SRCS:.c=d.o)))
 $(OBJSDIR)%.o:		$(LINKLISTDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIR)
-					$(CC) -c $< $(CFLAGS) -o $@
+					@$(CC) -c $< $(CFLAGS) -o $@
 $(OBJSDIR)%.o:		$(DARRAYDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIR)
@@ -185,7 +185,7 @@ debug:				$(OBJSD) Makefile
 $(NAME):			$(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
 					@printf "$(_RED)Compiled libft\n$(_END)"
-					@$(MAKE) -j4 -C Leaky
+					@$(MAKE) -C Leaky
 
 .PHONY: clean
 clean:
