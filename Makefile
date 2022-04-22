@@ -1,7 +1,7 @@
 NAME				=		libft.a
 NAMED				=		libftd.a
 CC					=		gcc
-CFLAGS				=		-Wall -Wextra -o2 -I. -MD
+CFLAGS				=		-Wall -Wextra -o2 -I.
 CFLAGSD				=		$(CFLAGS) $(FSANITIZE)
 FSANITIZE			=		-fsanitize=address
 DEPS				=		libft.h
