@@ -1,7 +1,7 @@
 NAME				=		libft.a
 NAMED				=		libftd.a
 CC					=		gcc
-CFLAGS				=		-Wall -Wextra -o2 -I. -MD
+CFLAGS				=		-Wall -Wextra -o2 -I.
 CFLAGSD				=		$(CFLAGS) $(FSANITIZE)
 FSANITIZE			=		-fsanitize=address
 DEPS				=		libft.h
@@ -87,7 +87,7 @@ OBJSD				=		$(addprefix $(OBJSDIRD), $(notdir $(SRCS:.c=d.o)))
 $(OBJSDIR)%.o:		$(LINKLISTDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIR)
-					@$(CC) -c $< $(CFLAGS) -o $@
+					$(CC) -c $< $(CFLAGS) -o $@
 $(OBJSDIR)%.o:		$(DARRAYDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIR)
