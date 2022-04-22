@@ -1,7 +1,7 @@
 NAME				=		libft.a
 NAMED				=		libftd.a
 CC					=		gcc
-CFLAGS				=		-Wall -Wextra -o2 -I.
+CFLAGS				=		-Wall -Wextra -o2 -I. -MD
 CFLAGSD				=		$(CFLAGS) $(FSANITIZE)
 FSANITIZE			=		-fsanitize=address
 DEPS				=		libft.h
@@ -185,16 +185,19 @@ debug:				$(OBJSD) Makefile
 $(NAME):			$(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
 					@printf "$(_RED)Compiled libft\n$(_END)"
+					@$(MAKE) -j4 -C Leaky
 
 .PHONY: clean
 clean:
 					@rm -f $(OBJSDIR)*.o
 					@rm -f $(OBJSDIRD)*.o
+					@$(MAKE) -C Leaky clean
 
 .PHONY: fclean
 fclean: clean
 					@rm -f $(NAME)
 					@rm -f $(NAMED)
+					@$(MAKE) -C Leaky fclean
 
 .PHONY: re
 re: fclean all
