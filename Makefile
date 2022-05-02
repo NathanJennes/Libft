@@ -179,8 +179,12 @@ $(OBJSDIRD)%d.o:	$(STANDARDDIR)%.c $(DEPS)
 all:				$(NAME)
 
 .PHONY: debug
-debug:				$(OBJSD) Makefile
+debug:				$(NAMED)
+
+$(NAMED):			$(OBJSD) Makefile
 					@ar -rcs $(NAMED) $(OBJSD)
+					@printf "$(_RED)Compiled libft\n$(_END)"
+					@$(MAKE) -C Leaky
 
 $(NAME):			$(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
