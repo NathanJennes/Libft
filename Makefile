@@ -184,7 +184,7 @@ debug:				$(NAMED)
 $(NAMED):			$(OBJSD) Makefile
 					@ar -rcs $(NAMED) $(OBJSD)
 					@printf "$(_RED)Compiled libft\n$(_END)"
-					@$(MAKE) -C Leaky
+					@$(MAKE) -C Leaky debug
 
 $(NAME):			$(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
