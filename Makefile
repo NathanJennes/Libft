@@ -181,15 +181,21 @@ all:				$(NAME)
 .PHONY: debug
 debug:				$(NAMED)
 
-$(NAMED):			$(OBJSD) Makefile
+$(NAMED):			leakyd $(OBJSD) Makefile
 					@ar -rcs $(NAMED) $(OBJSD)
 					@printf "$(_RED)Compiled libft\n$(_END)"
-					@$(MAKE) -C Leaky debug
 
-$(NAME):			$(OBJS) Makefile
+$(NAME):			leaky $(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
 					@printf "$(_RED)Compiled libft\n$(_END)"
-					@$(MAKE) -C Leaky
+
+.PHONY: leaky
+leaky:
+	@$(MAKE) -C Leaky
+
+.PHONY: leakyd
+leakyd:
+	@$(MAKE) -C Leaky debug
 
 .PHONY: clean
 clean:
