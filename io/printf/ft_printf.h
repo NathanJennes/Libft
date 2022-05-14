@@ -45,7 +45,7 @@ typedef struct s_data
 
 /* ft_printf.c */
 int			ft_vdprintf(int fd, const char *format, va_list args);
-t_printf	*init_data(int fd, const char *str, int (**f)(t_printf *, va_list));
+t_printf	init_data(int fd, const char *str, int (**f)(t_printf *, va_list));
 int			ft_convert(t_printf *p, int (**f)(t_printf *, va_list), va_list ar);
 
 /* conv_func.c */

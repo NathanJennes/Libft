@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cybattis <cybattis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:33:34 by cybattis          #+#    #+#             */
-/*   Updated: 2022/01/11 18:38:36 by cybattis         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:42:11 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,27 @@ int	ft_dprintf(int fd, const char *format, ...)
 int	ft_vdprintf(int fd, const char *format, va_list args)
 {
 	size_t		len;
-	t_printf	*p;
+	t_printf	p;
 	int			(*func[9])(t_printf *, va_list);
 
 	p = init_data(fd, format, func);
-	if (!p)
-		return (-1);
-	while (p->str[0])
+	while (p.str[0])
 	{
-		if (p->str[0] != '%')
-			print_char(p);
+		if (p.str[0] != '%')
+			print_char(&p);
 		else
-			ft_convert(p, func, args);
-		if (p->str[0] == 0)
+			ft_convert(&p, func, args);
+		if (p.str[0] == 0)
 			break ;
-		p->str++;
+		p.str++;
 	}
-	len = p->len;
-	free(p);
+	len = p.len;
 	return (len);
 }
 
-t_printf	*init_data(int fd, const char *s, int (**f)(t_printf *, va_list))
+t_printf	init_data(int fd, const char *s, int (**f)(t_printf *, va_list))
 {
-	t_printf	*p;
+	t_printf	p;
 
 	f[0] = ft_int;
 	f[1] = ft_uint;
@@ -71,13 +68,10 @@ t_printf	*init_data(int fd, const char *s, int (**f)(t_printf *, va_list))
 	f[6] = ft_lower_hex;
 	f[7] = ft_upper_hex;
 	f[8] = ft_addr;
-	p = malloc(sizeof(t_printf) * 1);
-	if (!p)
-		return (NULL);
-	p->fd = fd;
-	p->str = s;
-	p->len = 0;
-	p->dot = 0;
+	p.fd = fd;
+	p.str = s;
+	p.len = 0;
+	p.dot = 0;
 	return (p);
 }
 
