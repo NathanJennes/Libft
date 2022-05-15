@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 15:08:48 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/15 15:15:17 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/15 15:43:57 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ int	ft_end_with(char *str, char *end)
 	if (ft_strlen(ending) > ft_strlen(end))
 		return (0);
 	return (1);
-
 }
