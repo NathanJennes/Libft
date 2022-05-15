@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/15 11:39:42 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/15 15:16:38 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ int			ft_strskip_digit(char *str);
 int			ft_strskip_alpha(char *str);
 int			ft_strskip_space(char *str);
 int			ft_strskip_alnum(char *str);
+int			ft_end_with(char *str, char *end);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_toupper(int c);
@@ -141,6 +142,7 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strrnstr(const char *haystack, const char *needle, size_t len);
 char		**ft_split(char const *s, char c);
 int			ft_split_size(char **t);
 void		ft_split_free(char **t);

@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:23:57 by njennes           #+#    #+#             */
-/*   Updated: 2021/11/04 16:17:22 by njennes          ###   ########lyon.fr   */
+/*   Updated: 2022/05/15 15:37:28 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,28 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		if (!needle[j])
 			return ((char *)(haystack + i));
 		i++;
+	}
+	return (NULL);
+}
+
+char	*ft_strrnstr(const char *haystack, const char *needle, size_t len)
+{
+	int64_t	i;
+	int64_t	j;
+	int64_t	needle_len;
+
+	if (!needle[0] || len == 0)
+		return ((char *)haystack);
+	i = len - 1;
+	needle_len = (int64_t)ft_strlen(needle) - 1;
+	while (i > 0)
+	{
+		j = needle_len;
+		while (j > 0 && i - needle_len + j > 0 && haystack[i - needle_len + j] == needle[j])
+			j--;
+		if (!needle[j])
+			return ((char *)(haystack + i));
+		i--;
 	}
 	return (NULL);
 }
