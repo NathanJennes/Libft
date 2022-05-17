@@ -21,7 +21,7 @@ uint32_t	ft_randi(uint32_t min, uint32_t max)
 	ptr = malloc(1);
 	if (!ptr)
 		return (0);
-	number = (uint32_t)ptr;
+	number = (uint64_t)ptr;
 	i = 0;
 	while (i < 5)
 	{

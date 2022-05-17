@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/15 15:16:38 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/17 21:52:23 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ typedef struct s_vec2
 	float	x;
 	float	y;
 }			t_vec2;
+
+typedef struct s_ivec2
+{
+	int64_t	x;
+	int64_t	y;
+}			t_ivec2;
 
 typedef struct s_vec3
 {
@@ -230,15 +236,30 @@ t_vec2		vec2_copy(t_vec2 old);
 t_vec2		vec2_zero(void);
 t_vec2		vec2_set(float value);
 t_vec2		*vec2_add(t_vec2 *self, const t_vec2 other);
-t_vec2		*vec2_multi(t_vec2 *self, long value);
+t_vec2		*vec2_multi(t_vec2 *self, int64_t value);
 t_vec2		*vec2_multf(t_vec2 *self, float value);
 t_vec2		*vec2_multv2(t_vec2 *self, t_vec2 vec);
-t_vec2		*vec2_divi(t_vec2 *self, long value);
+t_vec2		*vec2_divi(t_vec2 *self, int64_t value);
 t_vec2		*vec2_divf(t_vec2 *self, float value);
 t_vec2		*vec2_divv2(t_vec2 *self, t_vec2 vec);
 t_vec2		*vec2_normalize(t_vec2 *vec);
 t_vec2		vec2_normalized(t_vec2 vec);
 float		vec2_mag(t_vec2 vec);
+
+t_ivec2		ivec2(int64_t x, int64_t y);
+t_ivec2		ivec2_copy(t_ivec2 old);
+t_ivec2		ivec2_zero(void);
+t_ivec2		ivec2_set(int64_t value);
+t_ivec2		*ivec2_add(t_ivec2 *self, const t_ivec2 other);
+t_ivec2		*ivec2_multi(t_ivec2 *self, int64_t value);
+t_ivec2		*ivec2_multf(t_ivec2 *self, float value);
+t_ivec2		*ivec2_multv2(t_ivec2 *self, t_ivec2 vec);
+t_ivec2		*ivec2_divi(t_ivec2 *self, int64_t value);
+t_ivec2		*ivec2_divf(t_ivec2 *self, float value);
+t_ivec2		*ivec2_divv2(t_ivec2 *self, t_ivec2 vec);
+t_ivec2		*ivec2_normalize(t_ivec2 *vec);
+t_ivec2		ivec2_normalized(t_ivec2 vec);
+float		ivec2_mag(t_ivec2 vec);
 
 t_vec3		vec3(float x, float y, float z);
 t_vec3		vec3_copy(t_vec3 old);

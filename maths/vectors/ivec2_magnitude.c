@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_add.c                                         :+:      :+:    :+:   */
+/*   vec2_magnitude.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 18:17:56 by                   #+#    #+#             */
-/*   Updated: 2022/05/17 21:50:20 by njennes          ###   ########.fr       */
+/*   Created: 2022/01/05 18:17:53 by                   #+#    #+#             */
+/*   Updated: 2022/01/06 11:39:35 by njennes          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vec2	*vec2_add(t_vec2 *self, const t_vec2 other)
+float	ivec2_mag(t_ivec2 vec)
 {
-	self->x += other.x;
-	self->y += other.y;
-	return (self);
+	return (ft_sqrt(ft_pow2(vec.x) + ft_pow2(vec.y)));
 }

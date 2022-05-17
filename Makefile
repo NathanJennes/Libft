@@ -52,6 +52,7 @@ BASICMATH			=		ft_factorial.c ft_pow2.c ft_sqrt.c ft_trig.c ft_modf.c ft_lerp.c 
 #Vectors
 VECTORSDIR			=		maths/vectors/
 VECTORS				=		vec2_init.c vec2_add.c vec2_div.c vec2_magnitude.c vec2_mult.c vec2_normalize.c				\
+							ivec2_init.c ivec2_add.c ivec2_div.c ivec2_magnitude.c ivec2_mult.c ivec2_normalize.c				\
 							vec3_init.c vec3_add.c vec3_div.c vec3_magnitude.c vec3_mult.c vec3_normalize.c				\
 							vec3_lerpf.c vec3_clamp.c																	\
 							vec4_init.c vec4_add.c vec4_div.c vec4_mult.c												\

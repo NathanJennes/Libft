@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec2	*vec2_add(t_vec2 *self, const t_vec2 other)
+t_ivec2	*ivec2_add(t_ivec2 *self, const t_ivec2 other)
 {
 	self->x += other.x;
 	self->y += other.y;

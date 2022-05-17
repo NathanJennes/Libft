@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec2	*vec2_multi(t_vec2 *self, long value)
+t_vec2	*vec2_multi(t_vec2 *self, int64_t value)
 {
 	self->x *= value;
 	self->y *= value;
