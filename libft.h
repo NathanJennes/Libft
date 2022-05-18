@@ -123,10 +123,10 @@ int			ft_strisalpha(char *str);
 int			ft_strisdigit(char *str);
 
 //C style Strings Manipulation
-int			ft_strskip_digit(char *str);
-int			ft_strskip_alpha(char *str);
-int			ft_strskip_space(char *str);
-int			ft_strskip_alnum(char *str);
+char		*ft_strskip_digit(char *str);
+char		*ft_strskip_alpha(char *str);
+char		*ft_strskip_space(char *str);
+char		*ft_strskip_alnum(char *str);
 int			ft_end_with(char *str, char *end);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
