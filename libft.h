@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/17 21:52:23 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/18 14:43:27 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,6 +245,9 @@ t_vec2		*vec2_divv2(t_vec2 *self, t_vec2 vec);
 t_vec2		*vec2_normalize(t_vec2 *vec);
 t_vec2		vec2_normalized(t_vec2 vec);
 float		vec2_mag(t_vec2 vec);
+t_ivec2		v2_to_iv2(t_vec2 vec);
+t_vec3		v2_to_v3(t_vec2 vec);
+t_vec4		v2_to_v4(t_vec2 vec);
 
 t_ivec2		ivec2(int64_t x, int64_t y);
 t_ivec2		ivec2_copy(t_ivec2 old);
@@ -260,6 +263,9 @@ t_ivec2		*ivec2_divv2(t_ivec2 *self, t_ivec2 vec);
 t_ivec2		*ivec2_normalize(t_ivec2 *vec);
 t_ivec2		ivec2_normalized(t_ivec2 vec);
 float		ivec2_mag(t_ivec2 vec);
+t_vec2		iv2_to_v2(t_ivec2 vec);
+t_vec3		iv2_to_v3(t_ivec2 vec);
+t_vec4		iv2_to_v4(t_ivec2 vec);
 
 t_vec3		vec3(float x, float y, float z);
 t_vec3		vec3_copy(t_vec3 old);
