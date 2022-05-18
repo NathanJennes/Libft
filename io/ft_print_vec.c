@@ -6,7 +6,7 @@
 /*   By: cybattis <cybattis@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:40:15 by cybattis          #+#    #+#             */
-/*   Updated: 2022/05/18 18:41:32 by cybattis         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:44:41 by cybattis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_vec2(t_vec2 v)
 
 void	ft_print_ivec2(t_ivec2 v)
 {
-	printf("[%d, %d]\n", v.x, v.y);
+	printf("[%lld, %lld]\n", v.x, v.y);
 }
 
 void	ft_print_vec3(t_vec3 v)
