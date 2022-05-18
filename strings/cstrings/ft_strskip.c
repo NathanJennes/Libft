@@ -6,13 +6,13 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:36:57 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/15 11:38:43 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/18 17:54:32 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strskip_digit(char *str)
+char	*ft_strskip_digit(char *str)
 {
 	int	i;
 
@@ -21,10 +21,10 @@ int	ft_strskip_digit(char *str)
 	i = 0;
 	while (str[i] && ft_isdigit(str[i]))
 		i++;
-	return (i);
+	return (&str[i]);
 }
 
-int	ft_strskip_alpha(char *str)
+char	*ft_strskip_alpha(char *str)
 {
 	int	i;
 
@@ -33,10 +33,10 @@ int	ft_strskip_alpha(char *str)
 	i = 0;
 	while (str[i] && ft_isalpha(str[i]))
 		i++;
-	return (i);
+	return (&str[i]);
 }
 
-int	ft_strskip_space(char *str)
+char	*ft_strskip_space(char *str)
 {
 	int	i;
 
@@ -45,10 +45,10 @@ int	ft_strskip_space(char *str)
 	i = 0;
 	while (str[i] && ft_isspace(str[i]))
 		i++;
-	return (i);
+	return (&str[i]);
 }
 
-int	ft_strskip_alnum(char *str)
+char	*ft_strskip_alnum(char *str)
 {
 	int	i;
 
@@ -57,5 +57,5 @@ int	ft_strskip_alnum(char *str)
 	i = 0;
 	while (str[i] && ft_isalnum(str[i]))
 		i++;
-	return (i);
+	return (&str[i]);
 }
