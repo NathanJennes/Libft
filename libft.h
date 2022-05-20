@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/18 14:43:27 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/20 13:29:05 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,11 +223,11 @@ double		ft_sin(double x);
 double		ft_modf(double x, double y);
 double		ft_lerpf(double base, double high, double value);
 double		ft_ilerpf(double base, double high, double value);
-size_t		ft_maxui(size_t a, size_t b);
-uint64_t	ft_maxi(uint64_t a, uint64_t b);
+uint64_t	ft_maxui(uint64_t a, uint64_t b);
+int64_t		ft_maxi(int64_t a, int64_t b);
 double		ft_maxf(double a, double b);
-size_t		ft_minui(size_t a, size_t b);
-uint64_t	ft_mini(uint64_t a, uint64_t b);
+uint64_t	ft_minui(uint64_t a, uint64_t b);
+int64_t		ft_mini(int64_t a, int64_t b);
 double		ft_minf(double a, double b);
 
 //Vectors
