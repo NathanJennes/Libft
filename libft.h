@@ -176,6 +176,10 @@ int			ft_putnbr_base_fd(size_t nbr, char *base, int fd);
 char		*ft_get_next_line(int fd);
 int			ft_printf(const char *str, ...);
 int			ft_dprintf(int fd, const char *format, ...);
+void		ft_print_vec2(t_vec2 v);
+void		ft_print_ivec2(t_ivec2 v);
+void		ft_print_vec3(t_vec3 v);
+void		ft_print_vec4(t_vec4 v);
 
 //Standard
 void		ft_error_exit(char *message);
