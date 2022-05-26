@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec4	vec4(float x, float y, float z, float w)
+t_vec4	vec4(double x, double y, double z, double w)
 {
 	t_vec4	vec;
 
@@ -45,7 +45,7 @@ t_vec4	vec4_zero(void)
 	return (vec);
 }
 
-t_vec4	vec4_set(float value)
+t_vec4	vec4_set(double value)
 {
 	t_vec4	vec;
 

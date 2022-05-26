@@ -33,7 +33,7 @@ t_mat4	*mat4_multi(t_mat4 *self, int value)
 	return (self);
 }
 
-t_mat4	*mat4_multf(t_mat4 *self, float value)
+t_mat4	*mat4_multf(t_mat4 *self, double value)
 {
 	self->m[0][0] *= value;
 	self->m[0][1] *= value;
@@ -72,7 +72,7 @@ t_vec4	mat4_multv4(t_mat4 self, t_vec4 other)
 t_mat4	mat4_multm4(t_mat4 self, t_mat4 other)
 {
 	t_mat4	mat;
-	float	sum;
+	double	sum;
 	int		i;
 	int		j;
 	int		k;

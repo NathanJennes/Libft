@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-float	vec3_mag(t_vec3 vec)
+double	vec3_mag(t_vec3 vec)
 {
 	return (ft_sqrt(\
 			ft_pow2(vec.x) + \

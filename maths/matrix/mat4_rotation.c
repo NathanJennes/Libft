@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <math.h>
 
-t_mat4	mat4_rotatex(t_mat4 self, float value)
+t_mat4	mat4_rotatex(t_mat4 self, double value)
 {
 	t_mat4	mat;
 
@@ -25,7 +25,7 @@ t_mat4	mat4_rotatex(t_mat4 self, float value)
 	return (mat);
 }
 
-t_mat4	mat4_rotatey(t_mat4 self, float value)
+t_mat4	mat4_rotatey(t_mat4 self, double value)
 {
 	t_mat4	mat;
 
@@ -37,7 +37,7 @@ t_mat4	mat4_rotatey(t_mat4 self, float value)
 	return (mat);
 }
 
-t_mat4	mat4_rotatez(t_mat4 self, float value)
+t_mat4	mat4_rotatez(t_mat4 self, double value)
 {
 	t_mat4	mat;
 
@@ -49,7 +49,7 @@ t_mat4	mat4_rotatez(t_mat4 self, float value)
 	return (mat);
 }
 
-t_mat4	mat4_rotate_axis(float angle, t_vec3 axis)
+t_mat4	mat4_rotate_axis(double angle, t_vec3 axis)
 {
 	t_vec3	v;
 	t_vec3	temp;

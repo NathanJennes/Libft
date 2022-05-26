@@ -19,7 +19,7 @@ t_vec2	*vec2_multi(t_vec2 *self, int64_t value)
 	return (self);
 }
 
-t_vec2	*vec2_multf(t_vec2 *self, float value)
+t_vec2	*vec2_multf(t_vec2 *self, double value)
 {
 	self->x *= value;
 	self->y *= value;

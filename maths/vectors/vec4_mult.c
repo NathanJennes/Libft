@@ -21,7 +21,7 @@ t_vec4	*vec4_multi(t_vec4 *self, long value)
 	return (self);
 }
 
-t_vec4	*vec4_multf(t_vec4 *self, float value)
+t_vec4	*vec4_multf(t_vec4 *self, double value)
 {
 	self->x *= value;
 	self->y *= value;

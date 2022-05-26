@@ -14,7 +14,7 @@
 
 t_vec3	*vec3_normalize(t_vec3 *vec)
 {
-	float	magnitude;
+	double	magnitude;
 
 	magnitude = vec3_mag(*vec);
 	vec->x /= magnitude;
@@ -25,7 +25,7 @@ t_vec3	*vec3_normalize(t_vec3 *vec)
 
 t_vec3	vec3_normalized(t_vec3 vec)
 {
-	float	magnitude;
+	double	magnitude;
 	t_vec3	normalized;
 
 	magnitude = vec3_mag(vec);

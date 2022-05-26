@@ -62,8 +62,8 @@ typedef struct s_StringV
 
 typedef struct s_vec2
 {
-	float	x;
-	float	y;
+	double	x;
+	double	y;
 }			t_vec2;
 
 typedef struct s_ivec2
@@ -74,17 +74,17 @@ typedef struct s_ivec2
 
 typedef struct s_vec3
 {
-	float	x;
-	float	y;
-	float	z;
+	double	x;
+	double	y;
+	double	z;
 }			t_vec3;
 
 typedef struct s_vec4
 {
-	float	x;
-	float	y;
-	float	z;
-	float	w;
+	double	x;
+	double	y;
+	double	z;
+	double	w;
 }			t_vec4;
 
 typedef struct s_mat4
@@ -94,13 +94,13 @@ typedef struct s_mat4
 
 typedef struct s_proj
 {
-	float	right;
-	float	left;
-	float	top;
-	float	bot;
-	float	far;
-	float	near;
-	float	aspect;
+	double	right;
+	double	left;
+	double	top;
+	double	bot;
+	double	far;
+	double	near;
+	double	aspect;
 }			t_proj;
 
 typedef struct s_darray
@@ -192,6 +192,7 @@ void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memseti(void *b, int c, size_t len);
 void		*ft_memsetf(void *b, float c, size_t len);
+void		*ft_memsetd(void *b, double c, size_t len);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
@@ -235,20 +236,20 @@ int64_t		ft_mini(int64_t a, int64_t b);
 double		ft_minf(double a, double b);
 
 //Vectors
-t_vec2		vec2(float x, float y);
+t_vec2		vec2(double x, double y);
 t_vec2		vec2_copy(t_vec2 old);
 t_vec2		vec2_zero(void);
-t_vec2		vec2_set(float value);
+t_vec2		vec2_set(double value);
 t_vec2		*vec2_add(t_vec2 *self, const t_vec2 other);
 t_vec2		*vec2_multi(t_vec2 *self, int64_t value);
-t_vec2		*vec2_multf(t_vec2 *self, float value);
+t_vec2		*vec2_multf(t_vec2 *self, double value);
 t_vec2		*vec2_multv2(t_vec2 *self, t_vec2 vec);
 t_vec2		*vec2_divi(t_vec2 *self, int64_t value);
-t_vec2		*vec2_divf(t_vec2 *self, float value);
+t_vec2		*vec2_divf(t_vec2 *self, double value);
 t_vec2		*vec2_divv2(t_vec2 *self, t_vec2 vec);
 t_vec2		*vec2_normalize(t_vec2 *vec);
 t_vec2		vec2_normalized(t_vec2 vec);
-float		vec2_mag(t_vec2 vec);
+double		vec2_mag(t_vec2 vec);
 t_ivec2		v2_to_iv2(t_vec2 vec);
 t_vec3		v2_to_v3(t_vec2 vec);
 t_vec4		v2_to_v4(t_vec2 vec);
@@ -259,65 +260,65 @@ t_ivec2		ivec2_zero(void);
 t_ivec2		ivec2_set(int64_t value);
 t_ivec2		*ivec2_add(t_ivec2 *self, const t_ivec2 other);
 t_ivec2		*ivec2_multi(t_ivec2 *self, int64_t value);
-t_ivec2		*ivec2_multf(t_ivec2 *self, float value);
+t_ivec2		*ivec2_multf(t_ivec2 *self, double value);
 t_ivec2		*ivec2_multv2(t_ivec2 *self, t_ivec2 vec);
 t_ivec2		*ivec2_divi(t_ivec2 *self, int64_t value);
-t_ivec2		*ivec2_divf(t_ivec2 *self, float value);
+t_ivec2		*ivec2_divf(t_ivec2 *self, double value);
 t_ivec2		*ivec2_divv2(t_ivec2 *self, t_ivec2 vec);
 t_ivec2		*ivec2_normalize(t_ivec2 *vec);
 t_ivec2		ivec2_normalized(t_ivec2 vec);
-float		ivec2_mag(t_ivec2 vec);
+double		ivec2_mag(t_ivec2 vec);
 t_vec2		iv2_to_v2(t_ivec2 vec);
 t_vec3		iv2_to_v3(t_ivec2 vec);
 t_vec4		iv2_to_v4(t_ivec2 vec);
 
-t_vec3		vec3(float x, float y, float z);
+t_vec3		vec3(double x, double y, double z);
 t_vec3		vec3_copy(t_vec3 old);
 t_vec3		vec3_zero(void);
-t_vec3		vec3_set(float value);
+t_vec3		vec3_set(double value);
 t_vec3		*vec3_add(t_vec3 *self, const t_vec3 other);
 t_vec3		*vec3_multi(t_vec3 *self, long value);
-t_vec3		*vec3_multf(t_vec3 *self, float value);
+t_vec3		*vec3_multf(t_vec3 *self, double value);
 t_vec3		*vec3_multv3(t_vec3 *self, t_vec3 vec);
 t_vec3		*vec3_divi(t_vec3 *self, long value);
-t_vec3		*vec3_divf(t_vec3 *self, float value);
+t_vec3		*vec3_divf(t_vec3 *self, double value);
 t_vec3		*vec3_divv3(t_vec3 *self, t_vec3 vec);
 t_vec3		*vec3_normalize(t_vec3 *vec);
 t_vec3		*vec3_clamp_max(t_vec3 *vec, int x, int y, int z);
 t_vec3		*vec3_clamp_min(t_vec3 *vec, int x, int y, int z);
 t_vec3		vec3_normalized(t_vec3 vec);
 t_vec3		vec3_lerpf(t_vec3 base, t_vec3 high, double value);
-float		vec3_mag(t_vec3 vec);
+double		vec3_mag(t_vec3 vec);
 
-t_vec4		vec4(float x, float y, float z, float w);
+t_vec4		vec4(double x, double y, double z, double w);
 t_vec4		vec4_copy(t_vec4 old);
 t_vec4		vec4_zero(void);
-t_vec4		vec4_set(float value);
+t_vec4		vec4_set(double value);
 t_vec4		*vec4_add(t_vec4 *self, const t_vec4 other);
 t_vec4		*vec4_multi(t_vec4 *self, long value);
-t_vec4		*vec4_multf(t_vec4 *self, float value);
+t_vec4		*vec4_multf(t_vec4 *self, double value);
 t_vec4		*vec4_multv4(t_vec4 *self, t_vec4 vec);
 t_vec4		*vec4_divi(t_vec4 *self, long value);
-t_vec4		*vec4_divf(t_vec4 *self, float value);
+t_vec4		*vec4_divf(t_vec4 *self, double value);
 t_vec4		*vec4_divv4(t_vec4 *self, t_vec4 vec);
 
 //Matrix
-t_mat4		mat4(float value);
+t_mat4		mat4(double value);
 t_mat4		mat4_copy(t_mat4 old);
 t_mat4		mat4_zero(void);
 t_mat4		mat4_identity(void);
 t_mat4		*mat4_multi(t_mat4 *self, int value);
-t_mat4		*mat4_multf(t_mat4 *self, float value);
+t_mat4		*mat4_multf(t_mat4 *self, double value);
 t_vec4		mat4_multv4(t_mat4 self, t_vec4 other);
 t_mat4		mat4_multm4(t_mat4 self, t_mat4 other);
 t_mat4		mat4_translate(t_mat4 self, t_vec3 vec);
-t_mat4		mat4_rotatex(t_mat4 self, float value);
-t_mat4		mat4_rotatey(t_mat4 self, float value);
-t_mat4		mat4_rotatez(t_mat4 self, float value);
+t_mat4		mat4_rotatex(t_mat4 self, double value);
+t_mat4		mat4_rotatey(t_mat4 self, double value);
+t_mat4		mat4_rotatez(t_mat4 self, double value);
 t_mat4		mat4_rotate(t_vec3 vec);
-t_mat4		mat4_rotate_axis(float angle, t_vec3 axis);
+t_mat4		mat4_rotate_axis(double angle, t_vec3 axis);
 t_mat4		mat4_ortho(t_proj proj);
-t_mat4		mat4_scalef(float value);
+t_mat4		mat4_scalef(double value);
 t_mat4		mat4_scalev3(t_vec3 vec);
 
 #endif

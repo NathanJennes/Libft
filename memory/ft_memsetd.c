@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_magnitude.c                                   :+:      :+:    :+:   */
+/*   ft_memsetf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 18:17:53 by                   #+#    #+#             */
-/*   Updated: 2022/01/06 11:39:35 by njennes          ###   ########lyon.fr   */
+/*   Created: 2022/01/22 17:07:21 by                   #+#    #+#             */
+/*   Updated: 2022/01/22 17:07:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ivec2_mag(t_ivec2 vec)
+void	*ft_memsetd(void *b, double c, size_t len)
 {
-	return (ft_sqrt(ft_pow2(vec.x) + ft_pow2(vec.y)));
+	size_t	i;
+	float	*bcpy;
+
+	bcpy = b;
+	i = 0;
+	while (i < len)
+	{
+		bcpy[i] = c;
+		i++;
+	}
+	return (b);
 }

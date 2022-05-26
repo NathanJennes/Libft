@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static float	cos_mod(double x)
+static double	cos_mod(double x)
 {
 	double	result;
 	double	den;

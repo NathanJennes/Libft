@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_mat4	mat4(float value)
+t_mat4	mat4(double value)
 {
 	t_mat4	mat;
 

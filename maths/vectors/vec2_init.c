@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec2	vec2(float x, float y)
+t_vec2	vec2(double x, double y)
 {
 	t_vec2	vec;
 
@@ -39,7 +39,7 @@ t_vec2	vec2_zero(void)
 	return (vec);
 }
 
-t_vec2	vec2_set(float value)
+t_vec2	vec2_set(double value)
 {
 	t_vec2	vec;
 

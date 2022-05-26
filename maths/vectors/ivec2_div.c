@@ -19,7 +19,7 @@ t_ivec2	*ivec2_divi(t_ivec2 *self, int64_t value)
 	return (self);
 }
 
-t_ivec2	*ivec2_divf(t_ivec2 *self, float value)
+t_ivec2	*ivec2_divf(t_ivec2 *self, double value)
 {
 	self->x /= (int64_t)value;
 	self->y /= (int64_t)value;

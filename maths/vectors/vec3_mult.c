@@ -20,7 +20,7 @@ t_vec3	*vec3_multi(t_vec3 *self, long value)
 	return (self);
 }
 
-t_vec3	*vec3_multf(t_vec3 *self, float value)
+t_vec3	*vec3_multf(t_vec3 *self, double value)
 {
 	self->x *= value;
 	self->y *= value;

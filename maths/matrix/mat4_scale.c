@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_mat4	mat4_scalef(float value)
+t_mat4	mat4_scalef(double value)
 {
 	t_mat4	mat;
 

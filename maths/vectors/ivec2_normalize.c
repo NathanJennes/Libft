@@ -14,7 +14,7 @@
 
 t_ivec2	*ivec2_normalize(t_ivec2 *vec)
 {
-	float	magnitude;
+	double	magnitude;
 
 	magnitude = ivec2_mag(*vec);
 	vec->x /= (int64_t)magnitude;
@@ -24,7 +24,7 @@ t_ivec2	*ivec2_normalize(t_ivec2 *vec)
 
 t_ivec2	ivec2_normalized(t_ivec2 vec)
 {
-	float	magnitude;
+	double	magnitude;
 	t_ivec2	normalized;
 
 	magnitude = ivec2_mag(vec);

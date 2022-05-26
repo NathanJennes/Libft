@@ -14,7 +14,7 @@
 
 t_vec2	*vec2_normalize(t_vec2 *vec)
 {
-	float	magnitude;
+	double	magnitude;
 
 	magnitude = vec2_mag(*vec);
 	vec->x /= magnitude;
@@ -24,7 +24,7 @@ t_vec2	*vec2_normalize(t_vec2 *vec)
 
 t_vec2	vec2_normalized(t_vec2 vec)
 {
-	float	magnitude;
+	double	magnitude;
 	t_vec2	normalized;
 
 	magnitude = vec2_mag(vec);

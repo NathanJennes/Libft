@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec3	vec3(float x, float y, float z)
+t_vec3	vec3(double x, double y, double z)
 {
 	t_vec3	vec;
 
@@ -42,7 +42,7 @@ t_vec3	vec3_zero(void)
 	return (vec);
 }
 
-t_vec3	vec3_set(float value)
+t_vec3	vec3_set(double value)
 {
 	t_vec3	vec;
 
