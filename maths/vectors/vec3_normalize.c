@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:59:39 by                   #+#    #+#             */
-/*   Updated: 2022/01/06 11:39:35 by njennes          ###   ########lyon.fr   */
+/*   Updated: 2022/05/27 16:29:06 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_vec3	*vec3_normalize(t_vec3 *vec)
 	double	magnitude;
 
 	magnitude = vec3_mag(*vec);
+	if (magnitude < 0.0001)
+		return (vec);
 	vec->x /= magnitude;
 	vec->y /= magnitude;
 	vec->z /= magnitude;

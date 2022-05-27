@@ -17,6 +17,8 @@ t_ivec3	*ivec3_normalize(t_ivec3 *vec)
 	double	magnitude;
 
 	magnitude = ivec3_mag(*vec);
+	if (magnitude < 0.0001)
+		return (vec);
 	vec->x /= magnitude;
 	vec->y /= magnitude;
 	vec->z /= magnitude;
