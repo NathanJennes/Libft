@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/05/20 13:29:05 by njennes          ###   ########.fr       */
+/*   Updated: 2022/05/27 15:12:09 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,13 @@ typedef struct s_vec3
 	double	y;
 	double	z;
 }			t_vec3;
+
+typedef struct s_ivec3
+{
+	int64_t	x;
+	int64_t	y;
+	int64_t	z;
+}			t_ivec3;
 
 typedef struct s_vec4
 {
@@ -289,6 +296,24 @@ t_vec3		*vec3_clamp_min(t_vec3 *vec, int x, int y, int z);
 t_vec3		vec3_normalized(t_vec3 vec);
 t_vec3		vec3_lerpf(t_vec3 base, t_vec3 high, double value);
 double		vec3_mag(t_vec3 vec);
+
+t_ivec3		ivec3(int64_t x, int64_t y, int64_t z);
+t_ivec3		ivec3_copy(t_ivec3 old);
+t_ivec3		ivec3_zero(void);
+t_ivec3		ivec3_set(int64_t value);
+t_ivec3		*ivec3_add(t_ivec3 *self, const t_ivec3 other);
+t_ivec3		*ivec3_multi(t_ivec3 *self, int64_t value);
+t_ivec3		*ivec3_multf(t_ivec3 *self, double value);
+t_ivec3		*ivec3_multv3(t_ivec3 *self, t_ivec3 vec);
+t_ivec3		*ivec3_divi(t_ivec3 *self, int64_t value);
+t_ivec3		*ivec3_divf(t_ivec3 *self, double value);
+t_ivec3		*ivec3_divv3(t_ivec3 *self, t_ivec3 vec);
+t_ivec3		*ivec3_normalize(t_ivec3 *vec);
+t_ivec3		*ivec3_clamp_max(t_ivec3 *vec, int64_t x, int64_t y, int64_t z);
+t_ivec3		*ivec3_clamp_min(t_ivec3 *vec, int64_t x, int64_t y, int64_t z);
+t_ivec3		ivec3_normalized(t_ivec3 vec);
+t_ivec3		ivec3_lerpf(t_ivec3 base, t_ivec3 high, double value);
+double		ivec3_mag(t_ivec3 vec);
 
 t_vec4		vec4(double x, double y, double z, double w);
 t_vec4		vec4_copy(t_vec4 old);

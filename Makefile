@@ -1,7 +1,7 @@
 NAME				=		libft.a
 NAMED				=		libftd.a
 CC					=		gcc
-CFLAGS				=		-Wall -Wextra -o2 -I.
+CFLAGS				=		-Wall -Wextra -Werror -o2 -I.
 CFLAGSD				=		$(CFLAGS) $(FSANITIZE)
 FSANITIZE			=		-fsanitize=address
 DEPS				=		libft.h
@@ -57,6 +57,8 @@ VECTORS				=		vec2_init.c vec2_add.c vec2_div.c vec2_magnitude.c vec2_mult.c vec
 							ivec2_conversion.c	\
 							vec3_init.c vec3_add.c vec3_div.c vec3_magnitude.c vec3_mult.c vec3_normalize.c				\
 							vec3_lerpf.c vec3_clamp.c																	\
+							ivec3_init.c ivec3_add.c ivec3_div.c ivec3_magnitude.c ivec3_mult.c ivec3_normalize.c		\
+							ivec3_lerpf.c ivec3_clamp.c	\
 							vec4_init.c vec4_add.c vec4_div.c vec4_mult.c												\
 
 #Matrix
