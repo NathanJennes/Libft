@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_vec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cybattis <cybattis@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: stb47 <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:40:15 by cybattis          #+#    #+#             */
-/*   Updated: 2022/05/18 18:44:41 by cybattis         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:51:08 by stb47            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_vec2(t_vec2 v)
 
 void	ft_print_ivec2(t_ivec2 v)
 {
-	printf("[%lld, %lld]\n", v.x, v.y);
+	printf("[%" PRId64 ", % " PRId64 "]\n", v.x, v.y);
 }
 
 void	ft_print_vec3(t_vec3 v)
