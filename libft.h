@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stb47 <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: Cyril <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/06/02 14:47:43 by stb47            ###   ########.fr       */
+/*   Updated: 2022/06/03 16:05:59 by Cyril            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define FT_FALSE 0
 # define TRUE 1
 
+# include <inttypes.h>
 # ifdef __linux__
-#  include <inttypes.h>
 #  include <stdint.h>
 #  define OPEN_MAX 1024
 # endif
