@@ -19,5 +19,5 @@ double	ft_lerpf(double base, double height, double value)
 
 double	ft_ilerpf(double base, double height, double value)
 {
-	return ((value / base) / (height / base));
+	return ((value - base) / (height - base));
 }
