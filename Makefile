@@ -30,7 +30,7 @@ PRINTF				=		ft_printf.c conv_func.c conv_func2.c get_flags.c print_flags.c prin
 #Memory Management
 MEMORYDIR			=		memory/
 MEMORY				=		ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c			\
-							ft_memseti.c ft_memsetf.c
+							ft_memseti.c ft_memsetf.c ft_memsetd.c
 
 #C style strings
 CSTRINGSDIR			=		strings/cstrings/
