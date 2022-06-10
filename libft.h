@@ -6,7 +6,7 @@
 /*   By: Cyril <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/06/03 16:05:59 by Cyril            ###   ########.fr       */
+/*   Updated: 2022/06/09 12:51:56 by Cyril            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@
 # define BUFFER_SIZE 1024
 
 # define PI 3.141592653589793
-# define TWO_PI 6.28318530718
-# define HALF_PI 1.57079632679
+# define TWO_PI 6.2831853071796
+# define HALF_PI 1.5707963267949
+# define PI_3_4 2.3561944901923
+# define PI_5_4 3.9269908169872
+# define PI_7_4 5.4977871437821
+# define PI_3_2 4.7123889803847
 
 # define FT_ANY 0
 # define FT_EACH 1
