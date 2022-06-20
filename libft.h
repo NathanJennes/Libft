@@ -203,6 +203,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memseti(void *b, int c, size_t len);
+void		*ft_memsetl(void *b, int64_t c, size_t len);
 void		*ft_memsetf(void *b, float c, size_t len);
 void		*ft_memsetd(void *b, double c, size_t len);
 void		*ft_memchr(const void *s, int c, size_t n);
