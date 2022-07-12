@@ -1,0 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gc_strarray_fromstr.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 14:26:44 by njennes           #+#    #+#             */
+/*   Updated: 2022/07/12 17:00:09 by njennes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	**gc_strarray_fromstr(char *str)
+{
+	char	**array;
+
+	array = gc_strarray_init();
+	if (!str)
+		return (array);
+	array = gc_strarray_append(array, str);
+	return (array);
+}

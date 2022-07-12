@@ -69,6 +69,13 @@ MATRIX				=		mat4_init.c mat4_mult.c mat4_mvp.c mat4_rotation.c mat4_scale.c
 STANDARDDIR			=		standard/
 STANDARD			=		ft_error_exit.c ft_random.c
 
+#Garbage collector
+GCDIR				=		memory/garbage_collector/
+GC					=		gc_init.c gc_calloc.c gc_free.c gc_itoa.c gc_split.c gc_split_free.c gc_strdup.c			\
+							gc_strappend.c gc_substr.c gc_strjoin.c gc_strarray_init.c gc_strarray_append.c				\
+							gc_strarray_free.c gc_strarray_from.c gc_strarray_size.c gc_strarray_asstr.c				\
+							gc_get_next_line.c gc_strarray_fromstr.c													\
+
 SRCS				=		$(addprefix $(LINKLISTDIR), $(LINKLIST))													\
 							$(addprefix $(DARRAYDIR), $(DARRAY)) 														\
 							$(addprefix $(IODIR), $(IO)) 																\
@@ -79,6 +86,7 @@ SRCS				=		$(addprefix $(LINKLISTDIR), $(LINKLIST))													\
 							$(addprefix $(VECTORSDIR), $(VECTORS)) 														\
 							$(addprefix $(MATRIXDIR), $(MATRIX)) 														\
 							$(addprefix $(STANDARDDIR), $(STANDARD)) 													\
+							$(addprefix $(GCDIR), $(GC)) 																\
 
 
 OBJSDIR				=		objs/
@@ -133,6 +141,10 @@ $(OBJSDIR)%.o:		$(STANDARDDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIR)
 					@$(CC) -c $< $(CFLAGS) -o $@
+$(OBJSDIR)%.o:		$(GCDIR)%.c $(DEPS)
+					@echo "$(_ORANGE)Compiling $<$(_END)"
+					@mkdir -p $(OBJSDIR)
+					@$(CC) -c $< $(CFLAGS) -o $@
 
 #DEBUG
 $(OBJSDIRD)%d.o:	$(LINKLISTDIR)%.c $(DEPS)
@@ -179,6 +191,10 @@ $(OBJSDIRD)%d.o:	$(STANDARDDIR)%.c $(DEPS)
 					@echo "$(_ORANGE)Compiling $<$(_END)"
 					@mkdir -p $(OBJSDIRD)
 					@$(CC) -c $< $(CFLAGSD) -o $@
+$(OBJSDIRD)%d.o:	$(GCDIR)%.c $(DEPS)
+					@echo "$(_ORANGE)Compiling $<$(_END)"
+					@mkdir -p $(OBJSDIRD)
+					@$(CC) -c $< $(CFLAGSD) -o $@
 
 .PHONY: all
 all:				$(NAME)
@@ -186,33 +202,24 @@ all:				$(NAME)
 .PHONY: debug
 debug:				$(NAMED)
 
-$(NAMED):			leakyd $(OBJSD) Makefile
+$(NAMED):			$(OBJSD) Makefile
 					@ar -rcs $(NAMED) $(OBJSD)
 					@printf "$(_RED)Compiled libft\n$(_END)"
 
-$(NAME):			leaky $(OBJS) Makefile
+$(NAME):			$(OBJS) Makefile
 					@ar -rcs $(NAME) $(OBJS)
 					@printf "$(_RED)Compiled libft\n$(_END)"
 
-.PHONY: leaky
-leaky:
-	@$(MAKE) -C Leaky
-
-.PHONY: leakyd
-leakyd:
-	@$(MAKE) -C Leaky debug
 
 .PHONY: clean
 clean:
 					@rm -f $(OBJSDIR)*.o
 					@rm -f $(OBJSDIRD)*.o
-					@$(MAKE) -C Leaky clean
 
 .PHONY: fclean
 fclean: clean
 					@rm -f $(NAME)
 					@rm -f $(NAMED)
-					@$(MAKE) -C Leaky fclean
 
 .PHONY: re
 re: fclean all

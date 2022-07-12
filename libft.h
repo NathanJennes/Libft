@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Cyril <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:44 by njennes           #+#    #+#             */
-/*   Updated: 2022/06/09 12:51:56 by Cyril            ###   ########.fr       */
+/*   Updated: 2022/07/12 17:15:20 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
 # include <unistd.h>
 # include <limits.h>
 
+# define FALSE 0
 # define FT_FALSE 0
 # define TRUE 1
+# define FT_TRUE 1
 
 # include <inttypes.h>
 # ifdef __linux__
@@ -351,5 +353,40 @@ t_mat4		mat4_rotate_axis(double angle, t_vec3 axis);
 t_mat4		mat4_ortho(t_proj proj);
 t_mat4		mat4_scalef(double value);
 t_mat4		mat4_scalev3(t_vec3 vec);
+
+//Garbage collector
+typedef struct s_gc
+{
+	void	**pointers;
+	size_t	ptrs_count;
+	size_t	capacity;
+	size_t	first_free;
+	int		(*callback)(void *);
+	void	*param;
+}			t_gc;
+
+t_gc		*gc_get(void);
+int			gc_getfootprint(void);
+void		gc_clean(void);
+void		gc_free(void *ptr);
+void		gc_destroy(void **ptr);
+void		gc_set_callback(int (*callback)());
+void		*gc_calloc(size_t count, size_t size);
+char		*gc_strdup(const char *s1);
+char		*gc_strappend(char *str, char c);
+char		*gc_strjoin(char *s1, char *s2, int to_free);
+char		*gc_substr(char const *s, unsigned int start, size_t len);
+char		**gc_split(char const *s, char c);
+char		*gc_get_next_line(int fd);
+void		gc_split_free(char **t);
+char		**gc_strarray_init(void);
+char		**gc_strarray_from(char **other, size_t size);
+char		**gc_strarray_fromstr(char *str);
+void		gc_strarray_free(char **array);
+char		**gc_strarray_append(char **array, char *str);
+char		*gc_strarray_asstr(char **array);
+size_t		gc_strarray_size(char **array);
+char		*gc_itoa(int n);
+void		gc_free2d(void **ptr, size_t size);
 
 #endif
