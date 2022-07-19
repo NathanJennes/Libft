@@ -6,7 +6,7 @@
 /*   By: njennes <njennes@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:45:30 by njennes           #+#    #+#             */
-/*   Updated: 2022/07/12 17:00:09 by njennes          ###   ########.fr       */
+/*   Updated: 2022/07/12 17:37:49 by njennes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*find_line(int fd, char *buffer, char **line)
 		return (NULL);
 	}
 	add_line_result = ft_add_to_line(line, buffer, bytes_read);
-	else if (add_line_result == 0)
+	if (add_line_result == 0)
 		return (find_line(fd, buffer, line));
 	else
 		return (*line);
